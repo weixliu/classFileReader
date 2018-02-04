@@ -1,0 +1,15 @@
+build
+classes
+target
+.gradle
+out
+src/main/java/com/lxw/learn/
+src/main/resources
+
+.idea
+.DS_Store
+
+# idea trying to generate iml file for gradle
+*.iml
+
+
