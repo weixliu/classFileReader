@@ -5,6 +5,7 @@ target
 out
 src/main/java/com/lxw/learn/
 src/main/resources
+src/test
 
 .idea
 .DS_Store
