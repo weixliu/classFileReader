@@ -22,6 +22,10 @@ public class CpInfo {
     @Getter
     protected byte tag;
 
+    public String prettyString(int beginSpace) {
+        return "";
+    }
+
     public static String tag2String(byte tag) {
         int iTag = tag;
         switch (iTag) {

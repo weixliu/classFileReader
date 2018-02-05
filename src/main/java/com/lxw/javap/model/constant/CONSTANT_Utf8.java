@@ -7,6 +7,8 @@ import lombok.Setter;
 
 import java.nio.charset.Charset;
 
+import static com.lxw.javap.util.StringUtils.fastSpaceString;
+
 @Builder
 public class CONSTANT_Utf8 extends CpInfo {
 //    @Getter
@@ -41,5 +43,17 @@ public class CONSTANT_Utf8 extends CpInfo {
                 ", utf8String='" + utf8String + '\'' +
                 ", tag=" + tag2String(tag) +
                 '}';
+    }
+
+    @Override
+    public String prettyString(int beginSpace) {
+        return fastSpaceString(beginSpace) + "CONSTANT_Utf8{" + "\n" +
+                fastSpaceString(beginSpace + 4) +
+                "length=" + length + ",\n" +
+                fastSpaceString(beginSpace + 4) +
+                "utf8String='" + utf8String + '\'' + ",\n" +
+                fastSpaceString(beginSpace + 4) +
+                "tag=" + tag2String(tag) + "\n" +
+                fastSpaceString(beginSpace) + '}';
     }
 }

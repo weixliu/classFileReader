@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import static com.lxw.javap.util.StringUtils.fastSpaceString;
+
 @Builder
 public class CONSTANT_Float extends CpInfo {
     @Setter
@@ -17,5 +19,15 @@ public class CONSTANT_Float extends CpInfo {
                 "bytes=" + floatValue +
                 ", tag=" + tag2String(tag) +
                 '}';
+    }
+
+    @Override
+    public String prettyString(int beginSpace) {
+        return fastSpaceString(beginSpace) + "CONSTANT_Float{" + "\n" +
+                fastSpaceString(beginSpace + 4) +
+                "bytes=" + floatValue +  ",\n" +
+                fastSpaceString(beginSpace + 4) +
+                "tag=" + tag2String(tag) + "\n" +
+                fastSpaceString(beginSpace) + '}';
     }
 }

@@ -18,7 +18,7 @@ public class MainEntry {
             System.out.println("Your class file path is:" + classPath);
             DataInputStream dataInputStream = new DataInputStream(new BufferedInputStream(new FileInputStream(new File(classPath))));
             ClassBody classBody = ClassParser.parserClass(dataInputStream);
-            System.out.println(classBody);
+            System.out.println(classBody.prettyString(0));
 //            Gson gson = new GsonBuilder().setPrettyPrinting().create();
 //            String outputStr = gson.toJson(classBody);
 //            System.out.println(outputStr);

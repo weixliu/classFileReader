@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import static com.lxw.javap.util.StringUtils.fastSpaceString;
+
 @Builder
 public class CONSTANT_Long extends CpInfo {
 //    @Setter
@@ -35,5 +37,15 @@ public class CONSTANT_Long extends CpInfo {
                 "longValue=" + longValue +
                 ", tag=" + tag2String(tag) +
                 '}';
+    }
+
+    @Override
+    public String prettyString(int beginSpace) {
+        return fastSpaceString(beginSpace) + "CONSTANT_Long{" + "\n" +
+                fastSpaceString(beginSpace + 4) +
+                "longValue=" + longValue + ",\n" +
+                fastSpaceString(beginSpace + 4) +
+                "tag=" + tag2String(tag) + "\n" +
+                fastSpaceString(beginSpace) + '}';
     }
 }

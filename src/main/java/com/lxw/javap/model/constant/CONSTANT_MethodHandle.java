@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import static com.lxw.javap.util.StringUtils.fastSpaceString;
+
 @Builder
 public class CONSTANT_MethodHandle extends CpInfo {
     @Getter
@@ -22,5 +24,17 @@ public class CONSTANT_MethodHandle extends CpInfo {
                 ", referenceIndex=" + referenceIndex +
                 ", tag=" + tag2String(tag) +
                 '}';
+    }
+
+    @Override
+    public String prettyString(int beginSpace) {
+        return fastSpaceString(beginSpace) + "CONSTANT_MethodHandle{" + "\n" +
+                fastSpaceString(beginSpace + 4) +
+                "referenceKind=" + referenceKind +  ",\n" +
+                fastSpaceString(beginSpace + 4) +
+                "referenceIndex=" + referenceIndex + ",\n" +
+                fastSpaceString(beginSpace + 4) +
+                "tag=" + tag2String(tag) + "\n" +
+                fastSpaceString(beginSpace) + '}';
     }
 }
